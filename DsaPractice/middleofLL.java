@@ -13,6 +13,9 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+
+METHOD 1:-
+
 class Solution {
     public ListNode middleNode(ListNode head) {
         int length =0;
@@ -30,6 +33,22 @@ class Solution {
         return temp; // we are not returning temp.val because we have to return the middle node not the value of middle node.
         
     }
+}
+
+method 2:- 
+
+class Solution {
+    public ListNode middleNode(ListNode head) {
+    
+    ListNode slow =head;
+    ListNode fast =head;
+
+    while(fast != null && fast.next != null){
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    return slow;
+}
 }
 
 
